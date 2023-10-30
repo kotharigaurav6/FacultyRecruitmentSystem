@@ -19,6 +19,7 @@ export const adminLoginController = async(request,response)=>{
 
         response.cookie('admin_jwt_token',token,{maxAge:24*60*60*1000,httpOnly:true});
         var adminObj = await adminModel.findOne({_id:email});
+        console.log(adminObj);
         var adminPassword = adminObj.password;
         var status = await bcrypt.compare(password,adminPassword);
         if(status){
