@@ -40,7 +40,7 @@ export const candidateRegistrationController = async(request,response)=>{
           experience:experience,
           docs:fileName 
         }
-        var mailContent = "Hello "+email+",<br>Welcome to Programming Stairs. It's a <b>Verification Mail</b> from <b>Programming Stairs</b>.<br><br>Please Click on the below <b>Link</b> to Verify.<br> <a href='http://localhost:3000/candidate/verifyemail?email="+email+"'>Click Here to Verify</a>";
+        var mailContent = "Hello "+email+",<br>Welcome to Programming Stairs. It's a <b>Verification Mail</b> from <b>Programming Stairs</b>.<br><br>Please Click on the below <b>Link</b> to Verify.<br> <a href='https://facultyrecruitmentsystem.onrender.com/candidate/verifyemail?email="+email+"'>Click Here to Verify</a>";
 
         mailer.mailer(mailContent,email,async (info)=>{
             var expireTime = {expiresIn : '1d'};
